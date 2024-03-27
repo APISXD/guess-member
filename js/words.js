@@ -109,7 +109,7 @@ let wordList = [
     },
     {
         word: "gracia",
-        hint: "sekali lagii"
+        hint: "Always smile"
     },
     {
         word: "aralie",
