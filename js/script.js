@@ -32,8 +32,8 @@ function showAlertWithCustomTitle(message) {
   alert(message);
 }
 
-function initGame(e) {
-  let key = e.key.toLowerCase();
+function initGame(key) {
+  key = key.toLowerCase();
   if (key.length === 1 && key.match(/^[A-Za-z]+$/)) {
     if (word.includes(key)) {
       if (!correctLetters.includes(key)) {
@@ -83,4 +83,4 @@ resetBtn.addEventListener("click", () => {
   randomWord();
 });
 typingInput.addEventListener("input", () => {});
-document.addEventListener("keydown", initGame);
+document.addEventListener("keydown", (event) => initGame(event.key));
