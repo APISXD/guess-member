@@ -81,7 +81,7 @@ resetBtn.addEventListener("click", () => {
   guessedWords = [];
   randomWord();
 });
-typingInput.addEventListener("input", () => {});
+typingInput.addEventListener("touchstart", () => typingInput.focus());
 document.addEventListener("keydown", initGame);
 
 // Panggil fungsi randomWord() saat halaman dimuat
