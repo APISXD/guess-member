@@ -52,7 +52,7 @@ body{
   opacity: 0;
   z-index: -999;
   position: absolute;
-  pointer-events: auto;
+  pointer-events: none;
 }
 .inputs input:first-child{
   margin-left: 0px;
