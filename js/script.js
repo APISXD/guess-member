@@ -6,18 +6,17 @@ const inputs = document.querySelector(".inputs"),
   scoreDisplay = document.getElementById("score"),
   typingInput = document.querySelector(".typing-input");
 
-let word, maxGuesses, incorrectLetters = [], score = 0, correctLetters = [], guessedWords = [];
+let word, maxGuesses, incorrectLetters = [], score = 0, correctLetters = [];
 
 function randomWord() {
-  let filteredWordList = wordList.filter(item => !guessedWords.includes(item.word));
-  let ranItem = filteredWordList[Math.floor(Math.random() * filteredWordList.length)];
+  let ranItem = wordList[Math.floor(Math.random() * wordList.length)];
   word = ranItem.word;
   maxGuesses = word.length >= 5 ? 8 : 6;
-  correctLetters = [];
+  correctLetters = []; 
   incorrectLetters = [];
   hintTag.innerText = ranItem.hint;
   guessLeft.innerText = maxGuesses;
-  scoreDisplay.textContent = score;
+  scoreDisplay.textContent = score; // Perbarui skor di tampilan
   wrongLetter.innerText = incorrectLetters;
 
   let html = "";
@@ -26,65 +25,51 @@ function randomWord() {
   }
   inputs.innerHTML = html;
 }
+randomWord();
 
 function showAlertWithCustomTitle(message) {
   alert(message);
 }
 
-function initGame(event) {
-  let key = event.key.toLowerCase();
-  if (key.length === 1 && key.match(/^[A-Za-z]+$/)) {
-    if (word.includes(key)) {
-      if (!correctLetters.includes(key)) {
-        correctLetters.push(key);
-        score++; // Menambah skor jika huruf ditebak benar
+function initGame(e) {
+  let key = e.target.value.toLowerCase();
+  if(key.match(/^[A-Za-z]+$/) && !incorrectLetters.includes(` ${key}`) && !correctLetters.includes(key)) {
+    if(word.includes(key)) {
+      for (let i = 0; i < word.length; i++) {
+        if(word[i] == key) {
+          correctLetters.push(key);
+          // Tambah skor jika jawaban benar
+          score++;
+          scoreDisplay.textContent = score; // Perbarui skor di tampilan
+          inputs.querySelectorAll("input")[i].value = key;
+        }
       }
     } else {
-      if (!incorrectLetters.includes(key)) {
-        incorrectLetters.push(` ${key}`);
-        score = Math.max(0, score - 1); // Mengurangi skor jika huruf ditebak salah
-      }
       maxGuesses--;
+      // Kurangi skor jika huruf ditebak salah
+      score = Math.max(0, score - 1);
+      scoreDisplay.textContent = score; // Perbarui skor di tampilan
+      incorrectLetters.push(` ${key}`);
     }
     guessLeft.innerText = maxGuesses;
     wrongLetter.innerText = incorrectLetters;
-    scoreDisplay.textContent = score; // Perbarui tampilan skor
   }
   typingInput.value = "";
-  updateInputsDisplay();
-  setTimeout(checkGameOver, 100);
-}
 
-function updateInputsDisplay() {
-  for (let i = 0; i < word.length; i++) {
-    if (correctLetters.includes(word[i])) {
-      inputs.querySelectorAll("input")[i].value = word[i];
+  setTimeout(() => {
+    if(correctLetters.length === word.length) {
+      showAlertWithCustomTitle(`Congrats! You found the word ${word.toUpperCase()}\nYour score is ${score}`);
+      return randomWord();
+    } else if(maxGuesses < 1) {
+      showAlertWithCustomTitle(`Game over! You don't have remaining guesses\nYour score is ${score}`);
+      for(let i = 0; i < word.length; i++) {
+        inputs.querySelectorAll("input")[i].value = word[i];
+      }
     }
-  }
+  }, 100);
 }
 
-function checkGameOver() {
-  if (correctLetters.length === word.length) {
-    guessedWords.push(word);
-    showAlertWithCustomTitle(`Congrats! You found the word ${word.toUpperCase()}\nYour score is ${score}`);
-    randomWord();
-  } else if (maxGuesses < 1) {
-    guessedWords.push(word);
-    showAlertWithCustomTitle(`Game over! You don't have remaining guesses\nYour score is ${score}`);
-    for (let i = 0; i < word.length; i++) {
-      inputs.querySelectorAll("input")[i].value = word[i];
-    }
-  }
-}
-
-resetBtn.addEventListener("click", () => {
-  guessedWords = [];
-  randomWord();
-});
-typingInput.addEventListener("touchstart", () => typingInput.focus());
-document.addEventListener("keydown", initGame);
-
-// Panggil fungsi randomWord() saat halaman dimuat
-window.onload = function() {
-  randomWord();
-};
+resetBtn.addEventListener("click", randomWord);
+typingInput.addEventListener("input", initGame);
+inputs.addEventListener("click", () => typingInput.focus());
+document.addEventListener("keydown", () => typingInput.focus());
