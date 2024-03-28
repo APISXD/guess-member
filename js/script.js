@@ -1,3 +1,4 @@
+// Ambil elemen-elemen yang diperlukan dari DOM
 const inputs = document.querySelector(".inputs"),
   hintTag = document.querySelector(".hint span"),
   guessLeft = document.querySelector(".guess-left span"),
@@ -6,8 +7,10 @@ const inputs = document.querySelector(".inputs"),
   scoreDisplay = document.getElementById("score"),
   typingInput = document.querySelector(".typing-input");
 
+// Mendefinisikan variabel yang dibutuhkan
 let word, maxGuesses, incorrectLetters = [], score = 0, correctLetters = [], guessedWords = [];
 
+// Fungsi untuk memilih kata secara acak
 function randomWord() {
   let filteredWordList = wordList.filter(item => !guessedWords.includes(item.word));
   let ranItem = filteredWordList[Math.floor(Math.random() * filteredWordList.length)];
@@ -20,20 +23,22 @@ function randomWord() {
   scoreDisplay.textContent = score;
   wrongLetter.innerText = incorrectLetters;
 
+  // Menampilkan input untuk setiap huruf dalam kata
   let html = "";
   for (let i = 0; i < word.length; i++) {
     html += `<input type="text" disabled>`;
   }
   inputs.innerHTML = html;
 }
-randomWord();
 
+// Fungsi untuk menampilkan pesan alert dengan judul kustom
 function showAlertWithCustomTitle(message) {
   alert(message);
 }
 
-function initGame(key) {
-  key = key.toLowerCase();
+// Fungsi untuk memproses input keyboard
+function initGame(event) {
+  let key = event.key.toLowerCase();
   if (key.length === 1 && key.match(/^[A-Za-z]+$/)) {
     if (word.includes(key)) {
       if (!correctLetters.includes(key)) {
@@ -56,6 +61,7 @@ function initGame(key) {
   setTimeout(checkGameOver, 100);
 }
 
+// Fungsi untuk memperbarui tampilan input
 function updateInputsDisplay() {
   for (let i = 0; i < word.length; i++) {
     if (correctLetters.includes(word[i])) {
@@ -64,6 +70,7 @@ function updateInputsDisplay() {
   }
 }
 
+// Fungsi untuk memeriksa apakah permainan berakhir
 function checkGameOver() {
   if (correctLetters.length === word.length) {
     guessedWords.push(word);
@@ -78,9 +85,16 @@ function checkGameOver() {
   }
 }
 
+// Mendengarkan event click pada tombol reset
 resetBtn.addEventListener("click", () => {
   guessedWords = [];
   randomWord();
 });
-typingInput.addEventListener("input", () => {});
-document.addEventListener("keydown", (event) => initGame(event.key));
+
+// Mendengarkan event keydown untuk memproses input keyboard
+document.addEventListener("keydown", initGame);
+
+// Memanggil fungsi randomWord() saat halaman dimuat
+window.onload = function() {
+  randomWord();
+};
