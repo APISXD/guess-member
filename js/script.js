@@ -24,12 +24,12 @@ function randomWord() {
 }
 randomWord();
 
-function showAlertWithCustomTitle(message, customTitle) {
+function showAlertWithoutTitle(message) {
     // Simpan judul halaman sebelumnya
     var originalTitle = document.title;
     
-    // Ganti judul halaman dengan judul kustom
-    document.title = customTitle;
+    // Ganti judul halaman dengan string kosong
+    document.title = '';
     
     // Tampilkan pesan alert
     alert(message);
@@ -60,10 +60,10 @@ function initGame(e) {
 
     setTimeout(() => {
         if(correctLetters.length === word.length) {
-            showAlertWithCustomTitle(`Congrats! You found the word ${word.toUpperCase()}`);
+            showAlertWithoutTitle(`Congrats! You found the word ${word.toUpperCase()}`);
             return randomWord();
         } else if(maxGuesses < 1) {
-            showAlertWithCustomTitle("Game over! You don't have remaining guesses");
+            showAlertWithoutTitle("Game over! You don't have remaining guesses");
             for(let i = 0; i < word.length; i++) {
                 inputs.querySelectorAll("input")[i].value = word[i];
             }
