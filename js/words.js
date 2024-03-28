@@ -1,226 +1,226 @@
 let wordList = [
     {
         word: "amanda",
-        hint: "🏍️"
+        jiko: "Brum Brum, Melaju cepat bagai motor 1000cc! Aku si gadis penyuka motor"
     },
     {
         word: "christy",
-        hint: "🐟"
+        jiko: "Peduli dan berbaik hati, siapakah dia?"
     },
     {
         word: "lia",
-        hint: "⚽"
+        jiko: "Si social butterfly yang energik dan periang!"
     },
     {
         word: "zee",
-        hint: "😎"
+        jiko: "Si gadis tomboy yang semangatnya meletup-letup"
     },
     {
         word: "callie",
-        hint: "😢😭😿"
+        jiko: "Si beruang madu, penyuka madu!"
     },
     {
         word: "oniel",
-        hint: "bapak bapak"
+        jiko: "Seperti teka-teki yang akan membuat kalian penasaran denganku!"
     },
     {
         word: "olla",
-        hint: "🏎️ horas"
+        jiko: "Dengan keajaibanku, aku akan membuat kalian penasaran denganku."
     },
     {
         word: "feni",
-        hint: "idol bingits"
+        jiko: "Matahari yang indah, yang akan memberikan kehangatan di setiap harinya"
     },
     {
         word: "fiony",
-        hint: "🐣"
+        jiko: "Seperti simfoni yang menenangkan hati"
     },
     {
         word: "flora",
-        hint: "bogel"
+        jiko: "Ada yang mau ikut aku?"
     },
     {
         word: "freya",
-        hint: "😄🍫"
+        jiko: "Gadis Koleris yang suka berimajinasi, terangi harimu dengan senyuman karamelku"
     },
     {
         word: "ella",
-        hint: "hissatsu"
+        jiko: "Ohayo! Konnichiwa! Oyasumi!"
     },
     {
         word: "gita",
-        hint: "🧊🌨️❄️⛄"
+        jiko: "Diam bukan berarti tidak memperhatikanmu"
     },
     {
         word: "gracie",
-        hint: "xixixi"
+        jiko: "Manis seperti gulali, imut seperti kelinci"
     },
     {
         word: "greesel",
-        hint: "lutunaa"
+        jiko: "Pandangan mataku akan menyinari hatimu bagaikan kunang-kunang di malam hari"
     },
     {
         word: "eli",
-        hint: "kagetnya luar biasa"
+        jiko: "pang! Dengan energi kegembiraanku aku akan menghangatkan suasana"
     },
     {
         word: "indah",
-        hint: "mommy"
+        jiko: "Tak banyak bicara bercerita lewat tulisan"
     },
     {
         word: "indira",
-        hint: "teteh bandung"
+        jiko: "Watashi no kokoro unlock, akan menemani hari-harimu dengan sepenuh hati"
     },
     {
         word: "jessi",
-        hint: "temen olla"
+        jiko: "Suka menari dan akan berusaha menjadi sumber energimu"
     },
     {
         word: "lyn",
-        hint: "cici pik"
+        jiko: "Seperti ombak laut yang tenang, tiba-tiba aku akan menyapumu dengan banyak cinta!"
     },
     {
         word: "kathrina",
-        hint: "bokem"
+        jiko: "Never miss a chance to be a star!"
     },
     {
         word: "lulu",
-        hint: "ckp"
+        jiko: "Seperti kerang ajaib yang indah, suara semangatku akan mengiringi hidupmu"
     },
     {
         word: "marsha",
-        hint: "anime"
+        jiko: "Seperti pizza yang selalu dinanti-nantikan semua orang, selalu nantikan aku ya!"
     },
     {
         word: "muthe",
-        hint: "dont touch!"
+        jiko: "Dengan kelincahanku, aku akan menari setiap hari"
     },
     {
         word: "raisha",
-        hint: "adek bongsor"
+        jiko: "Kalau sakura itu kembang, Aku itu kembanggaanmu!"
     },
     {
         word: "adel",
-        hint: "abang abang katanya"
+        jiko: "Bagai kucing yang kalem, tapi selalu memikat hati kamu"
     },
     {
         word: "shani",
-        hint: "lebih lebih dari"
+        jiko: "Semanis coklat, selembut sutra. Halo, aku Shani!"
     },
     {
         word: "gracia",
-        hint: "Always smile"
+        jiko: "Senyumku akan terekam jelas dalam ingatanmu seperti foto dengan sejuta warna"
     },
     {
         word: "aralie",
-        hint: "Seperti bunga yang mekar"
+        jiko: "Seperti bunga yang mekar, aku akan membuat kamu…kamu…dan kamu terbayang-bayang"
     },
     {
         word: "delynn",
-        hint: "pyong pyong"
+        jiko: "Nyemangatin dan ngangenin, siapa yang kamu pikirkan?"
     },
     {
         word: "shasa",
-        hint: "horas we"
+        jiko: "Horas wei! Gadis ceria yang akan membawamu ke dunia keajaiban penuh warna"
     },
     {
         word: "alya",
-        hint: "poyang"
+        jiko: "Jika hatimu sedang menangis, aku akan datang sebagai pelangi"
     },
     {
         word: "anin",
-        hint: "🥭"
+        jiko: "Si mungil hadir, semanis mangga"
     },
     {
         word: "lana",
-        hint: "Dengan Kekuatan bulan"
+        jiko: "Dengan kekuatan bulan aku akan menyihirmu dengan pesonaku!"
     },
     {
         word: "erine",
-        hint: "checkmate!"
+        jiko: "Hadir dengan seribu kejutan..Checkmate! Siap memenangkan hatimu!"
     },
     {
         word: "cathy",
-        hint: "ampun biyung, apa kau"
+        jiko: "Si peri cantik jelita, itulah aku"
     },
     {
         word: "elin",
-        hint: "Semanis permen kapas"
+        jiko: "Semanis permen kapas dan seindah bunga lavender"
     },
     {
         word: "chelsea",
-        hint: "bule jamet"
+        jiko: "As bright as the shooting stars in the starry night sky"
     },
     {
         word: "cynthia",
-        hint: "pop pop"
+        jiko: "Semangatku terus menerus meluap, pop pop"
     },
     {
         word: "danella",
-        hint: "toktok 👋"
+        jiko: "Tok tok! Siapa? Si penari yang akan menarikmu ke duniaku"
     },
     {
         word: "daisy",
-        hint: "seperti bunga daisy"
+        jiko: "Seperti bunga daisy, aku akan memancarkan kesegaran dan kebahagiaan"
     },
     {
         word: "fritzy",
-        hint: "pesulap"
+        jiko: "Abracadabra, si pesulap yang siap membuat hatimu terpikat!"
     },
     {
         word: "gendis",
-        hint: "the next diva 🎤"
+        jiko: "Bonjour, periang dan pencair suasana itulah aku"
     },
     {
         word: "lily",
-        hint: "piw piw jumpshot"
+        jiko: "Papipapipum aku akan mengejutkanmu dengan kehebatan ku"
     },
     {
         word: "trisha",
-        hint: "one two thriii"
+        jiko: "Pelukis yang hadir di mimpi-mimpi indahmu. One, two, Tri.."
     },
     {
         word: "jeane",
-        hint: "victoriaa!"
+        jiko: "Victoria! Aku akan selalu memenangkan hatimu"
     },
     {
         word: "moreen",
-        hint: "One and only"
+        jiko: "Sweet as bubble gum, graceful as a princess. Siapakah itu? One and only"
     },
     {
         word: "michie",
-        hint: "hello everyone it's"
+        jiko: "Always your number one. To infinity and beyond"
     },
     {
         word: "levi",
-        hint: "kapten aot"
+        jiko: "Are you ready? Jalani hari ini dengan menari bersama ku! Yuhu"
     },
     {
         word: "nayla",
-        hint: "baru burajar"
+        jiko: "Moshi..Mosh! Welcome Nayla Land! Halo semuanya, bakyu-n"
     },
     {
         word: "nachia",
-        hint: "panda imut katanya"
+        jiko: "Si Panda Unyu yang selalu ceria!"
     },
     {
         word: "oline",
-        hint: "oniel versi kalem"
+        jiko: "Semangatku full terus! Guess…guess…Oline!"
     },
     {
         word: "regie",
-        hint: "basket 🏀"
+        jiko: "Bagi kalium yang bereaksi dengan air, aku akan meledak dengan semangat ku! Boom!"
     },
     {
         word: "ribka",
-        hint: "lord ribi"
+        jiko: "Mirror..Mirror on the wall..who the sweetest in here.."
     },
     {
         word: "nala",
-        hint: "ROAR!"
+        jiko: "ROAR! Si Singa pemberani yang siap menyemangati harimu!"
     },
     {
         word: "kimmy",
-        hint: "baby hamster"
+        jiko: "Bagi hamster yang lincah, aku akan berlari-lari di pikiranmu"
     },
 ]
